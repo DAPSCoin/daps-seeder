@@ -35,7 +35,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), nPort(53), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false), ipv4_proxy(NULL), ipv6_proxy(NULL) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "pivx-seeder\n"
+    static const char *help = "daps-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -397,13 +397,13 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"pivx.seed.fuzzbawls.pw", "pivx.seed2.fuzzbawls.pw", "coin-server.com", "s3v3nh4cks.ddns.net", "178.254.23.111", "188.165.212.82", ""};
+static const string mainnet_seeds[] = {"seed1.dapscoin-seeds.com", "seed2.dapscoin-seeds.com", "seed3.dapscoin-seeds.com", "seed4.dapscoin-seeds.com", "seed5.dapscoin-seeds.com", ""};
 static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("188.165.212.82", 51472), true);
+    db.Add(CService("212.237.11.136", 53572), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
@@ -455,10 +455,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0x90;
-      pchMessageStart[1] = 0xc4;
-      pchMessageStart[2] = 0xfd;
-      pchMessageStart[3] = 0xe9;
+      pchMessageStart[0] = 0xa4;
+      pchMessageStart[1] = 0xb7;
+      pchMessageStart[2] = 0x79;
+      pchMessageStart[3] = 0x84;
       seeds = testnet_seeds;
       fTestNet = true;
   }
