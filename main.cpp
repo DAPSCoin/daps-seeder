@@ -402,9 +402,9 @@ static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
-  if (!fTestNet){
-    db.Add(CService("212.237.11.136", 53572), true);
-  }
+//  if (!fTestNet){
+//    db.Add(CService("no.tor.or.onion", 53572), true);
+//  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
