@@ -400,14 +400,12 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"seed1.dapscoin-seeds.com", "seed2.dapscoin-seeds.com", "seed3.dapscoin-seeds.com", "seed4.dapscoin-seeds.com", "seed5.dapscoin-seeds.com", ""};
-static const string testnet_seeds[] = {""};
 static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
-//  if (!fTestNet){
-//    db.Add(CService("no.tor.or.onion", 53572), true);
-//  }
+  if (!fTestNet){
+    db.Add(CService("kjy2eqzk4zwi5zd3.onion", mainnet_port), true);
+  }
   do {
     for (int i=0; seeds[i] != ""; i++) {
       vector<CNetAddr> ips;
@@ -458,10 +456,7 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xa4;
-      pchMessageStart[1] = 0xb7;
-      pchMessageStart[2] = 0x79;
-      pchMessageStart[3] = 0x84;
+      std::copy(std::begin(pchMessageStart_testnet), std::end(pchMessageStart_testnet), std::begin(pchMessageStart));
       seeds = testnet_seeds;
       fTestNet = true;
   }
