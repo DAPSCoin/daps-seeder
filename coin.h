@@ -8,6 +8,7 @@
 #include <string>
 
 static const std::string mainnet_seeds[] = {"seed.dapscoin-seeds.com",
+                                            "seed1.dapscoin-seeds.com",
                                             "seed2.dapscoin-seeds.com",
                                             "seed3.dapscoin-seeds.com",
                                             "seed4.dapscoin-seeds.com",
