@@ -13,10 +13,6 @@ static const std::string mainnet_seeds[] = {"seed.dapscoin.com",
                                             "seed3.dapscoin.com",
                                             "seed4.dapscoin.com",
                                             "seed5.dapscoin.com",
-                                            "seed6.dapscoin.com",
-                                            "seed7.dapscoin.com",
-                                            "seed8.dapscoin.com",
-                                            "seed9.dapscoin.com",
                                             ""};
 
 static const std::string testnet_seeds[] = {""};
