@@ -21,6 +21,6 @@ static const int mainnet_port = 53572;
 static const int testnet_port = 53574;
 
 static unsigned char pchMessageStart[4] = { 0xa4, 0xb7, 0x79, 0x84 };
-static unsigned char pchMessageStart_testnet[4] = { 0xa4, 0xb7, 0x79, 0x84 };
+static unsigned char pchMessageStart_testnet[4] = { 0xa5, 0xb8, 0x7a, 0x85 };
 
 #endif // __INCLUDED_COIN_H__
